@@ -44,11 +44,21 @@ def test_marcar_amarillos():
     assert marcar_amarillos("sacar", "_V_VV", "cs") == "AVAVV"
     assert marcar_amarillos("peras", "___V_", "casr") == "__AVA"
     assert marcar_amarillos("babas", "_____", "aeiou") == "_A___"
+
+def test_obtener_pistas():
+    print("Probando obtener_pistas...")
+    assert obtener_pistas("casar", "polio") == "_____"
+    assert obtener_pistas("casar", "casar") == "VVVVV"
+    assert obtener_pistas("casar", "cazar") == "VV_VV"
+    assert obtener_pistas("casar", "secta") == "A_A_A"
+    assert obtener_pistas("casar", "sacar") == "AVAVV"
+    assert obtener_pistas("casar", "peras") == "__AVA"
      
 test_es_palabra_valida()
 test_calcula_minutos_y_segundos()
 test_quitar_letra()
 test_marcar_verdes()
 test_marcar_amarillos()
+test_obtener_pistas()
 
 print("✅Todas las pruebas pasaron correctamente.")

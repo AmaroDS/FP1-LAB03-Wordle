@@ -79,7 +79,7 @@ def obtener_pistas(palabra_secreta: str, intento: str) -> str:
     Devuelve:
         Una cadena de 5 caracteres con 'V', 'A' y '_'
     """
-    # TODO: Implementa esta función
-    return "_____"  # Elimina esta línea cuando la implementes
+    verdes, restantes = marcar_verdes(palabra_secreta, intento)
+    return marcar_amarillos(intento, verdes, restantes)
 
 
