@@ -41,14 +41,32 @@ def quitar_letra(cadena: str, letra: str) -> str:
         else:
             borra = False
     return res
-        
 
-       
-        
+def marcar_verdes(palabra_secreta: str, intento: str) -> tuple :
+    verdes = ""
+    restantes = ""
 
+    for i in range(5):
+        if palabra_secreta[i] == intento[i]:
+            verdes += "V"
+        else:
+            verdes += "_"
+            restantes += palabra_secreta[i]
+    return verdes, restantes
 
+def marcar_amarillos(intento: str, verdes: str, restantes: str) -> str:
+    colores = ""
 
-# TODO: Escribe la cabecera completa e implementa la función marcar_verdes
+    for i in range (0,5):
+        if verdes[i] == "V":
+            colores += "V"
+        else:
+            if intento[i] in restantes:
+                colores += "A"
+                restantes = restantes.replace(intento[i], "", 1)
+            else:
+                colores += "_"
+    return colores
 
 # TODO: Escribe la cabecera completa e implementa la función marcar_amarillos
 
